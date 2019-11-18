@@ -71,14 +71,18 @@ static void updatePressure(u8 bar, u8 pressure) {
 }
 
 static void updateGate(u8 button, u8 pressed) {
-    if (button == 0)
-        set_gate(0, pressed);
-    else if (button == 2)
-        set_gate(1, pressed);
-    else if (button == 4)
-        set_gate(2, pressed);
-    else if (button == 6)
-        set_gate(3, pressed);
+    if (get_gate_output_count() > 4) {
+        set_gate(button, pressed);
+    } else {
+        if (button == 0)
+            set_gate(0, pressed);
+        else if (button == 2)
+            set_gate(1, pressed);
+        else if (button == 4)
+            set_gate(2, pressed);
+        else if (button == 6)
+            set_gate(3, pressed);
+    }
 }
 
 void process_event(u8 event, u8 *data, u8 length) {
