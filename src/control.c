@@ -26,7 +26,7 @@ int selected_preset;
 
 #define SCREEN_LINE_COUNT 8
 #define SCREEN_TIMER 0
-#define SCREEN_REFRESH_TIME 5000
+#define SCREEN_REFRESH_TIME 63
 
 u8 screenLine = 0;
 
