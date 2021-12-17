@@ -21,7 +21,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: 'recursive'
-        fetch-depth: '1'
+        fetch-depth: '0'
 
     - name: restore toolchain
       run: |
